@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import * as resource from "../../../config/list";
 import List from "@/components/Master/List";
 import { useRouter } from "next/navigation";
-import Form from "@/components/Master/Form";
 
 const Page = ({ params }: any) => {
   const { slug } = React.use(params);
@@ -22,6 +21,8 @@ const Page = ({ params }: any) => {
         apiUrl = "https://fakestoreapi.com/products";
       } else if (slug === "post") {
         apiUrl = "https://jsonplaceholder.typicode.com/posts";
+      }else if(slug ==="albumb"){
+        apiUrl="https://jsonplaceholder.typicode.com/albums"
       }
 
       const response = await fetch(apiUrl);
@@ -57,7 +58,8 @@ const Page = ({ params }: any) => {
   };
 
   const handleEdit = (item: any) => {
-    console.log(item);
+     router.push(`/form/${slug}`);
+    console.log("item",item);
   };
 
   const handleDelete = (id: number) => {
@@ -97,7 +99,10 @@ const Page = ({ params }: any) => {
           className=" bg-blue-500 text-white px-4 py-2 rounded-md"
         >
           Add {slug.charAt(0).toUpperCase() + slug.slice(1)}
+          
         </button>
+
+       
       </div>
 
       <List

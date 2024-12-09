@@ -8,6 +8,7 @@ interface FormProps {
   handleSubmit: () => void;
 }
 
+
 const Form: React.FC<FormProps> = ({ column, data, handleChange, handleSubmit }) => {
   const FormField = {
     text: TextInput,
@@ -19,6 +20,7 @@ const Form: React.FC<FormProps> = ({ column, data, handleChange, handleSubmit })
 
   return (
     <div className=" fixed inset-0 bg-opacity-50 backdrop-blur-sm bg-black  mt-24 ">
+    
       <div className='mt-10 bg-gray-100 relative w-[900px] m-auto p-16'>
       <div className='mx-auto max-w-6xl'>
       <form onSubmit={handleSubmit}>

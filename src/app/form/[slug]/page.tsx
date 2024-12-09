@@ -52,10 +52,24 @@ const Page = ({ params }: any) => {
   }
 
   return (
-    <div>
-      <h1 className=" text-center mt-10 text-2xl  font-bold">
-        {slug.charAt(0).toUpperCase() + slug.slice(1)} Form
-      </h1>
+   <>
+    <button
+          onClick={() => router.push(`/list/${slug}`)}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md   ml-10 mt-3"
+        >
+          Back
+        </button>
+      <div className=" flex  justify-center  ">
+     
+        <h1 className=" text-2xl font-bold">
+          {slug.charAt(0).toUpperCase() + slug.slice(1)} Form
+        </h1>
+   
+    
+
+
+
+
       <Form
         column={column}
         data={data}
@@ -63,6 +77,7 @@ const Page = ({ params }: any) => {
         handleSubmit={handleSubmit}
       />
     </div>
+    </>
   );
 };
 

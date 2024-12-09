@@ -1,19 +1,15 @@
+import { title } from "process";
 
-const post=[
+const albumb=[
     {
-        title:"S.No",
-        column:"id",
-        type:"number"
+        title:"User Id",
+        column:"userId",
+        type:"text"
     },
     {
         title:"Title",
         column:"title",
         type:"text"
-    },
-    {
-        title:"User Id",
-        column:"userId",
-        type:"number"
     },
     {
         title: "Actions",
@@ -22,4 +18,4 @@ const post=[
       }
 ]
 
-export default post
+export default albumb;
