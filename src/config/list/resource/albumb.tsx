@@ -11,11 +11,14 @@ const albumb=[
         column:"title",
         type:"text"
     },
-    {
-        title: "Actions",
-        column: "actions", 
-        type: "actions",
-      }
+  {
+    title: "Actions",
+    column: "actions", 
+    type: "actions",
+  }
+
+
+  
 ]
 
 export default albumb;

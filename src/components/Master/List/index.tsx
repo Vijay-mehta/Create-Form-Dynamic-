@@ -48,7 +48,7 @@ const List: React.FC<ListProps> = ({
                     <div className="flex space-x-4">
                       
                       <button
-                        onClick={() => handleEdit(item)}
+                        onClick={() => handleEdit(item.id)}
                         className="text-blue-500 hover:text-blue-700 "
                       >
                         

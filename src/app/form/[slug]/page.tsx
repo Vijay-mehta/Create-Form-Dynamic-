@@ -1,15 +1,42 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Form from "@/components/Master/Form";
 import * as resource from "../../../config/form";
-import { useRouter } from "next/navigation";
+import { useRouter,useSearchParams  } from "next/navigation";
 
 const Page = ({ params }: any) => {
   const { slug } = React.use(params);
   const column = resource[slug];
   const [data, setData] = useState<any>({});
   const [error, setError] = useState<string | null>(null);
+  const [edit,setEdit] =useState<any>([])
   const router = useRouter();
+  const searchParams = useSearchParams()
+ 
+  const search = searchParams.get('id')
+console.log("edit",edit)
+
+  const fetchData = async () => {
+    try {
+      let apiUrl = "";
+     
+        apiUrl = `http://localhost:8080/api/category/${search}`;
+      
+
+      const response = await fetch(apiUrl);
+      const fetchedData = await response.json();
+      setData(fetchedData);
+    } catch (err: any) {
+      setError(err.message);
+    }
+  };
+  useEffect(()=>{
+    
+    fetchData()
+    
+  },[])
+  // const { id } = query;
+  // console.log("ee",query)
   const handleChange = (newData: any) => {
     setData(newData);
   };
@@ -42,6 +69,8 @@ const Page = ({ params }: any) => {
       setError(err.message);
     }
   };
+
+  
 
   if (!column) {
     return <div>Content not found for the slug: {slug}</div>;

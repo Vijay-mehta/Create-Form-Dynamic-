@@ -57,9 +57,8 @@ const Page = ({ params }: any) => {
     }
   };
 
-  const handleEdit = (item: any) => {
-     router.push(`/form/${slug}`);
-    console.log("item",item);
+  const handleEdit = (id: number) => {
+    router.push(`/form/${slug}?id=${id}`);
   };
 
   const handleDelete = (id: number) => {
