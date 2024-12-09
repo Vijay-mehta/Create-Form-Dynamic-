@@ -49,21 +49,20 @@ const List: React.FC<ListProps> = ({
                       
                       <button
                         onClick={() => handleEdit(item)}
-                        className="text-blue-500 hover:text-blue-700"
+                        className="text-blue-500 hover:text-blue-700 "
                       >
                         
-                        <FaEdit className="inline-block" />
+                        <FaEdit className="inline-block h-6 w-6" />
                       </button>
                       <button
                         onClick={() => handleDelete(item.id)}
                         className="text-red-500 hover:text-red-700"
                       >
-                        <MdDelete className="inline-block" />
+                        <MdDelete className="inline-block h-6 w-6" />
                       </button>
                     </div>
                   ) : (
                     <>
-                      {" "}
                       {col.type === "file" ? (
                         <>
                           <img className=" w-8 h-5" src={item[col.column]} />
